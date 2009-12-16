@@ -14,6 +14,7 @@
 
 #define PREF_SAVE_OBJECT(name, value) [[NSUserDefaults standardUserDefaults] setObject:value forKey:name]
 #define PREF_READ_OBJECT(name) [[NSUserDefaults standardUserDefaults] objectForKey:name]
+#define PREF_READ_STRING(name) (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:name]
 #define PREF_READ_ARRAY(name) (NSArray*)PREF_READ_OBJECT(name)
 #define PREF_READ_DICTIONARY(name) (NSDictionary*)PREF_READ_OBJECT(name)
 #define PREF_SAVE_BOOL(name, value) [[NSUserDefaults standardUserDefaults] setBool:value forKey:name]
@@ -22,3 +23,5 @@
 
 #define PREF_USERNAME @"PREF_USERNAME"
 #define PREF_PASSWORD @"PREF_PASSWORD"
+
+#define USER_AGENT @"MyMaps-1.0"

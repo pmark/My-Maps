@@ -1,0 +1,107 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 4D499F671083CA4500868CF1 /* DevelopmentTestTool */;
+		activeTarget = 4F1C6E0E1027B3CE00B46459 /* GDataTouchStaticLib */;
+		codeSenseManager = 4D499F7C1083CA6600868CF1 /* Code sense */;
+		executables = (
+			4D499F671083CA4500868CF1 /* DevelopmentTestTool */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					512,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 277090939;
+			PBXWorkspaceStateSaveDate = 277090939;
+		};
+		sourceControlManager = 4D499F7B1083CA6600868CF1 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	4D499F671083CA4500868CF1 /* DevelopmentTestTool */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = DevelopmentTestTool;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	4D499F7B1083CA6600868CF1 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	4D499F7C1083CA6600868CF1 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	4F14A9DC0B1276B70072EBB8 /* GDataUnitTests */ = {
+		activeExec = 0;
+	};
+	4F1AD9010B71603F00DC0485 /* DevelopmentTestTool */ = {
+		activeExec = 0;
+		executables = (
+			4D499F671083CA4500868CF1 /* DevelopmentTestTool */,
+		);
+	};
+	4F1C6E0E1027B3CE00B46459 /* GDataTouchStaticLib */ = {
+		activeExec = 0;
+	};
+	4F38F6A50B66E91D00B24B81 /* GDataFramework */ = {
+		activeExec = 0;
+	};
+	4F85DEE0103B83B700B4C418 /* GDataIPhoneUnitTests */ = {
+		activeExec = 0;
+	};
+	4FDF2E450B21120F00DFCF57 /* GDataFeedTest.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1437.83, 59350}}";
+			sepNavSelRange = "{81255, 12}";
+			sepNavVisRange = "{81215, 689}";
+		};
+	};
+}

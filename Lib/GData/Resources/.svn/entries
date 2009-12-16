@@ -1,0 +1,67 @@
+8
+
+dir
+364
+http://gdata-objectivec-client.googlecode.com/svn/trunk/Source/Resources
+http://gdata-objectivec-client.googlecode.com/svn
+
+
+
+2009-07-23T21:47:10.555076Z
+294
+gregrobbins
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f334b912-182a-0410-b59a-f50d4d03ee1a
+
+GDataFramework-Info.plist
+file
+
+
+
+
+2009-10-12T20:25:10.000000Z
+7152167dc58787a29f7e0db3da3725a1
+2009-07-23T21:47:10.555076Z
+294
+gregrobbins
+
+GDataUnitTests-Info.plist
+file
+
+
+
+
+2009-10-12T20:25:10.000000Z
+92c500ada4b2cca567711909c5fc05cc
+2009-07-23T21:47:10.555076Z
+294
+gregrobbins
+
+DevelopmentTestApplication-Info.plist
+file
+
+
+
+
+2009-10-12T20:25:10.000000Z
+9debb0310a0108604f9967230ff43b43
+2007-05-31T01:33:38.748932Z
+58
+gregrobbins
+
+English.lproj
+dir
+
