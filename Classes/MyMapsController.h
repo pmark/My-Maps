@@ -6,7 +6,9 @@
 //  Copyright Bordertown Labs, LLC 2009. All rights reserved.
 //
 
-@interface RootViewController : UITableViewController {
+@interface MyMapsController : UITableViewController {
 }
+
+- (IBAction) login:(id)sender;
 
 @end

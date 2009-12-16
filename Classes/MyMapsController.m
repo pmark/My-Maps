@@ -6,10 +6,10 @@
 //  Copyright Bordertown Labs, LLC 2009. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "MyMapsController.h"
+#import "LoginController.h"
 
-
-@implementation RootViewController
+@implementation MyMapsController
 
 /*
 - (void)viewDidLoad {
@@ -148,6 +148,10 @@
     [super dealloc];
 }
 
+- (IBAction) login:(id)sender {
+  LoginController *loginController = [[LoginController alloc] initWithNibName:@"LoginController" bundle:[NSBundle mainBundle]];
+  [self presentModalViewController:loginController animated:YES];
+}
 
 @end
 
