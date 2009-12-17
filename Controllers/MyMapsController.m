@@ -6,22 +6,38 @@
 //  Copyright Bordertown Labs, LLC 2009. All rights reserved.
 //
 
+#import <CoreLocation/CoreLocation.h>
 #import "MyMapsController.h"
 #import "LoginController.h"
 #import "MyMaps.h"
+#import "GDataEntryMap.h"
+#import "MapViewController.h"
 
 @implementation MyMapsController
-@synthesize maps, myGoogleMaps;
+@synthesize maps, myGoogleMaps, table, sm3dar;
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+  
+  if (self.sm3dar == nil) {
+    SM3DAR_Controller *tmpSm3dar = [[[SM3DAR_Controller alloc] init] autorelease];
+    //[self.view addSubview:controller.view];
+    self.sm3dar = tmpSm3dar;	
+    self.sm3dar.delegate = nil;
+  }
+  
+  if (self.myGoogleMaps == nil) {
+    [self reloadGoogleMaps];
+  }
+}
 
-	MyGoogleMaps *mgm = [[MyGoogleMaps alloc] initWithUsername:PREF_READ_STRING(PREF_USERNAME)
-                                                     password:PREF_READ_STRING(PREF_PASSWORD) 
-                                                    userAgent:USER_AGENT];
-	self.myGoogleMaps = mgm;
+- (void)reloadGoogleMaps {
+  MyGoogleMaps *mgm = [[MyGoogleMaps alloc] initWithUsername:KEYCHAIN_READ_STRING(PREF_USERNAME)
+                                                    password:KEYCHAIN_READ_STRING(PREF_PASSWORD) 
+                                                   userAgent:USER_AGENT];
+  self.myGoogleMaps = mgm;
   mgm.delegate = self;
-	[mgm fetchFeedOfMaps];  
+  [mgm fetchFeedOfMaps];  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,7 +62,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 0;
+  return [self.maps count];
 }
 
 
@@ -60,19 +76,20 @@
     cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
   }
   
-	// Configure the cell.
-  
+  GDataEntryMap *map = (GDataEntryMap*)[self.maps objectAtIndex:indexPath.row];
+  cell.textLabel.text = [[map title] stringValue];
   return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
   // get map ID
+  GDataEntryMap *map = (GDataEntryMap*)[self.maps objectAtIndex:indexPath.row];
+  NSString *mapId = [map identifier];
 
-  // check if we've already fetched this map
-  //[self loadMapView];
+  // TODO: check if we've already fetched this map
   
-//	[self.myGoogleMaps fetchFeaturesOfMapWithIdentifier:mapId];  
+	[self.myGoogleMaps fetchFeaturesOfMapWithIdentifier:mapId];  
 }
 
 /*
@@ -109,35 +126,47 @@
 - (void)dealloc {
   [maps release];
   [myGoogleMaps release];
+  [table release];
+  [sm3dar release];
   [super dealloc];
 }
 
 - (IBAction) login:(id)sender {
   LoginController *loginController = [[LoginController alloc] initWithNibName:@"LoginController" bundle:[NSBundle mainBundle]];
+  loginController.delegate = self;
   [self presentModalViewController:loginController animated:YES];
 }
 
 - (void) didFetchMaps:(NSArray*)allMaps {
-  self.maps = allMaps;
+  NSMutableArray *tmpMaps = [NSMutableArray arrayWithCapacity:[allMaps count]];
+  
+  for (id wtf in allMaps) {
+    //NSLog(@"map: %@", [wtf title]);
+    [tmpMaps addObject:wtf];
+  }
+
+  self.maps = tmpMaps;
+  NSLog(@"reloading...\n");
+  [self.table reloadData];
 }
 
-- (void) loadMapView {  
-  // AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-  // [self.navigationController pushViewController:anotherViewController animated:YES];
-  // [anotherViewController release];  
+- (void) loadMapViewWithPoints:(NSArray*)points { 
+  NSLog(@"Loading %i points", [points count]);
+  MapViewController *mapViewer = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:[NSBundle mainBundle]];
+  mapViewer.points = points;
+  mapViewer.sm3dar = self.sm3dar;
+  [self.navigationController pushViewController:mapViewer animated:YES];  
+  [mapViewer release];  
 }
 
 - (void) didFetchFeatures:(NSArray*)features {
 
   // compile markers into an array of POIs
 
-
-/*
 	NSMutableArray *tempLocationArray = [[NSMutableArray alloc] initWithCapacity:[features count]];
-	NSMutableArray *jsonArray = [[NSMutableArray alloc] initWithCapacity:[features count]];
 	CLLocation *tempLocation;
 	CLLocationCoordinate2D location;
-//	ThreeDARPointOfInterest *tempCoordinate;		
+	SM3DAR_PointOfInterest *tempCoordinate;		
 	
 	NSLog(@"\n\ntitle, lat, lon, alt:");
 	for (GDataEntryMapFeature *f in features) {
@@ -148,18 +177,17 @@
 		NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
 		lng = [[formatter numberFromString:(NSString*)[chunks objectAtIndex:0]] doubleValue];
 		lat = [[formatter numberFromString:(NSString*)[chunks objectAtIndex:1]] doubleValue];
-		//alt = [[formatter numberFromString:(NSString*)[chunks objectAtIndex:2]] doubleValue];
-		float v = [BtlUtilities randomNumber:350]; // * [BtlUtilities randomPolarity];
-		alt = self.arController.currentLocation.altitude + v;
+		alt = [[formatter numberFromString:(NSString*)[chunks objectAtIndex:2]] doubleValue];
 		[formatter release];
 		location.latitude = lat;
 		location.longitude = lng;
 		tempLocation = [[CLLocation alloc] initWithCoordinate:location altitude:alt horizontalAccuracy:1.0 verticalAccuracy:1.0 timestamp:[NSDate date]];
 
 		NSString *featureName = [[[xml elementsForName:@"name"] objectAtIndex:0] stringValue];
-//		tempCoordinate = [[ThreeDARPointOfInterest alloc] initWithLocation:tempLocation title:featureName subtitle:nil url:nil];
+		tempCoordinate = [[SM3DAR_PointOfInterest alloc] initWithLocation:tempLocation title:featureName subtitle:nil url:nil];
 
 		//NSLog(@"%@,%f,%f,%f", tempCoordinate.title, lat, lng, alt);		
+    /*
 		[jsonArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:
 													featureName, @"title",
 													@"", @"subtitle",
@@ -167,22 +195,27 @@
 													[NSNumber numberWithDouble:lng], @"longitude",
 													[NSNumber numberWithDouble:alt], @"altitude",
 													nil]];
-		
-//		[tempLocationArray addObject:tempCoordinate];
+		*/
+		[tempLocationArray addObject:tempCoordinate];
 		[tempLocation release];		
 	}
 	
 	//[self.arController addCoordinates:tempLocationArray];
 
 	// convert to json
-	NSLog(@"\nPoints of interest as JSON\n");
-	NSLog([jsonArray jsonStringValue]);
+	//NSLog(@"\nPoints of interest as JSON\n");
+	//NSLog([jsonArray jsonStringValue]);
+  
+  [self loadMapViewWithPoints:tempLocationArray];
 
 	[tempLocationArray release];
-	[jsonArray release];
-*/
+	//[jsonArray release];
+
 }
 
+- (void) loginControllerWillBeDismissed {
+  [self reloadGoogleMaps];
+}
 
 @end
 

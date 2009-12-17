@@ -9,14 +9,14 @@
 #import "LoginController.h"
 #import "MyMaps.h"
 #import "LabeledTextFieldTableCell.h"
+#import "MyMapsController.h" 
 
 #define TAG_USERNAME 100
 #define TAG_PASSWORD 101
 
 @implementation LoginController
 
-@synthesize currentUsername, currentPassword;
-
+@synthesize currentUsername, currentPassword, delegate;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -170,6 +170,7 @@
 }
 
 - (IBAction) done:(id)sender {
+  [self.delegate loginControllerWillBeDismissed];
   [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 

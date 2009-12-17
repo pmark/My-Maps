@@ -38,7 +38,7 @@
 
 // begin retrieving the list of the user's maps
 - (void)fetchFeedOfMaps {
-	NSLog(@"fetchFeaturesOfMaps");
+	NSLog(@"fetchFeedOfMaps");
 
   [self setMapFeed:nil];
   [self setMapFetchError:nil];
@@ -142,6 +142,7 @@
     // memory.    
   }
 
+  NSLog(@"Connecting to map service for %@", self.username);
   [service setUserAgent:self.userAgent];
   [service setUserCredentialsWithUsername:self.username
                                  password:self.password];
