@@ -7,34 +7,27 @@
 //
 
 #import "MapViewController.h"
-
+#import "MyMapsSession.h"
 
 @implementation MapViewController
 @synthesize sm3dar, points;
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
- - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
- if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
- // Custom initialization
- }
- return self;
- }
- */
+//- (void)viewDidLoad {
+//  [super viewDidLoad];
+//}
 
-
- // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-  [super viewDidLoad];
+- (void)viewDidAppear:(BOOL)animated {
+  NSLog(@"MapViewController's viewDidAppear");
+  [super viewDidAppear:animated];
+  
+  if (self.sm3dar == nil) {
+    self.sm3dar = [MyMapsSession sharedMyMapsSession].sm3dar;	    
+    self.sm3dar.delegate = self;
+    NSLog(@"Adding 3dar view as subview");
+    [self.view addSubview:self.sm3dar.view];        
+    [self loadPointsOfInterest];
+  }
 }
-
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -48,7 +41,6 @@
 	// e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
   [sm3dar release];
   [points release];
@@ -57,8 +49,15 @@
 
 #pragma mark Data loading
 -(void)loadPointsOfInterest {
+  NSLog(@"[MyMaps] loadPointsOfInterest");
 	self.sm3dar.markerViewClass = nil;
-  //	[self.sm3dar loadMarkersFromJSONFile:@"markers"];
+  [self.sm3dar replaceAllPointsOfInterestWith:self.points];
+  [self.sm3dar zoomMapToFit];
+  
+
+//  [self.sm3dar loadMarkersFromJSONFile:@"markers"];
+    
+//  [self.sm3dar startCamera];  
 }
 
 -(void)didChangeFocusToPOI:(SM3DAR_PointOfInterest*)newPOI fromPOI:(SM3DAR_PointOfInterest*)oldPOI {

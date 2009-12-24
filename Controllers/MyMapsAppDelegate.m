@@ -8,7 +8,7 @@
 
 #import "MyMapsAppDelegate.h"
 #import "MyMapsController.h"
-
+#import "MyMapsSession.h"
 
 @implementation MyMapsAppDelegate
 
@@ -20,11 +20,14 @@
 #pragma mark Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    
-    // Override point for customization after app launch    
+  
+  // Override point for customization after app launch    
+  [[MyMapsSession sharedMyMapsSession] setup];
 	
 	[window addSubview:[navigationController view]];
-    [window makeKeyAndVisible];
+  [window makeKeyAndVisible];
+  
+  
 }
 
 

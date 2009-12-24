@@ -14,13 +14,11 @@
   NSArray *maps;
   MyGoogleMaps *myGoogleMaps;
   IBOutlet UITableView *table;
-  SM3DAR_Controller *sm3dar;
 }
 
 @property (nonatomic, retain) NSArray *maps;
 @property (nonatomic, retain) MyGoogleMaps *myGoogleMaps;
 @property (nonatomic, retain) IBOutlet UITableView *table;
-@property (nonatomic, retain) SM3DAR_Controller *sm3dar;
 
 - (IBAction) login:(id)sender;
 - (void) loadMapViewWithPoints:(NSArray*)points;

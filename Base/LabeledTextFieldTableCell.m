@@ -12,19 +12,13 @@
 @implementation LabeledTextFieldTableCell
 @synthesize textField;
 
-- (id) initWithReuseIdentifier:(NSString *)reuseIdentifier {
-	if (self = [super initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier]) {
-		[self initSubviews];
-	}
-	return self;
-}
-
 - (void) initSubviews {
   self.selectionStyle = UITableViewCellSelectionStyleNone;
   self.textField = [[UITextField alloc] init]; 
   self.textField.adjustsFontSizeToFitWidth = YES;
   self.textField.minimumFontSize = 8; 
-  [self.contentView addSubview:self.textField];		
+  [self.contentView addSubview:self.textField];
+  self.textLabel.backgroundColor = [UIColor clearColor];
 }
 
 - (void)layoutSubviews {

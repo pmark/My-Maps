@@ -38,8 +38,6 @@
 
 // begin retrieving the list of the user's maps
 - (void)fetchFeedOfMaps {
-	NSLog(@"fetchFeedOfMaps");
-
   [self setMapFeed:nil];
   [self setMapFetchError:nil];
   [self setFeatureFeed:nil];
@@ -80,7 +78,7 @@
 
 #pragma mark Fetch a map's features
 - (void)fetchFeaturesOfMapWithIdentifier:(NSString*)identifier {
-	NSLog(@"fetchFeaturesOfMapWithIdentifier:%@", identifier);
+	//NSLog(@"fetchFeaturesOfMapWithIdentifier: %@", identifier);
 	GDataEntryMap *map = [self getMapForIdentifier:identifier];
 
   if (map) {

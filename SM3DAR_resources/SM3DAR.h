@@ -77,6 +77,7 @@
 - (void)fadeMapToAlpha:(CGFloat)alpha;
 - (BOOL)setMapVisibility;
 - (void)annotateMap;
+- (void)centerMapOnCurrentLocation;
 @end
 
 
