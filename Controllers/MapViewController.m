@@ -23,7 +23,6 @@
   if (self.sm3dar == nil) {
     self.sm3dar = [MyMapsSession sharedMyMapsSession].sm3dar;	    
     self.sm3dar.delegate = self;
-    NSLog(@"Adding 3dar view as subview");
     [self.view addSubview:self.sm3dar.view];        
     [self loadPointsOfInterest];
   }
@@ -50,14 +49,10 @@
 #pragma mark Data loading
 -(void)loadPointsOfInterest {
   NSLog(@"[MyMaps] loadPointsOfInterest");
-	self.sm3dar.markerViewClass = nil;
+//	self.sm3dar.markerViewClass = nil;
   [self.sm3dar replaceAllPointsOfInterestWith:self.points];
-  [self.sm3dar zoomMapToFit];
-  
-
-//  [self.sm3dar loadMarkersFromJSONFile:@"markers"];
-    
-//  [self.sm3dar startCamera];  
+  [self.sm3dar zoomMapToFit];  
+  [self.sm3dar startCamera];  
 }
 
 -(void)didChangeFocusToPOI:(SM3DAR_PointOfInterest*)newPOI fromPOI:(SM3DAR_PointOfInterest*)oldPOI {
