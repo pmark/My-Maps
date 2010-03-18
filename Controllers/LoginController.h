@@ -14,7 +14,6 @@
 - (void) loginControllerWillBeDismissed;
 @end
 
-
 @interface LoginController : FormTableController <UITableViewDelegate,UITableViewDataSource> {
   NSString *currentUsername;
   NSString *currentPassword;  
@@ -25,7 +24,6 @@
 @property (nonatomic, retain) NSString *currentPassword;
 @property (nonatomic, assign) id<LoginControllerDelegate> delegate;
 
-//- (LabeledTextFieldTableCell *)newLabeledTextFieldForTableView:(UITableView *)tableView;
 - (IBAction) done:(id)sender;
 
 @end
