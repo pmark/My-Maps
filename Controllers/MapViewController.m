@@ -10,22 +10,34 @@
 #import "MyMapsSession.h"
 
 @implementation MapViewController
-@synthesize sm3dar, points;
+@synthesize points;
 
-//- (void)viewDidLoad {
-//  [super viewDidLoad];
-//}
+- (void)viewDidLoad {
+  [super viewDidLoad];
+
+  // set up 3DAR
+  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedSM3DAR_Controller];
+  sm3dar.delegate = self;
+  sm3dar.view.backgroundColor = [UIColor blackColor];
+  [self.view addSubview:sm3dar.view];
+  
+  // Normally 3DAR calls loadPointsOfInterest for us
+  // but in this case the session has already initialized 3DAR.
+  [self loadPointsOfInterest];  
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+  NSLog(@"[MVC] viewDidDisappear");
+  [super viewDidDisappear:animated];
+  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedSM3DAR_Controller];
+  [sm3dar suspend];
+//  [sm3dar stopCamera];  
+}
 
 - (void)viewDidAppear:(BOOL)animated {
   NSLog(@"MapViewController's viewDidAppear");
   [super viewDidAppear:animated];
   
-  if (self.sm3dar == nil) {
-    self.sm3dar = [MyMapsSession sharedMyMapsSession].sm3dar;	    
-    self.sm3dar.delegate = self;
-    [self.view addSubview:self.sm3dar.view];        
-    [self loadPointsOfInterest];
-  }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,12 +48,12 @@
 }
 
 - (void)viewDidUnload {
+  NSLog(@"[MVC] viewDidUnload");
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 }
 
 - (void)dealloc {
-  [sm3dar release];
   [points release];
   [super dealloc];
 }
@@ -49,10 +61,20 @@
 #pragma mark Data loading
 -(void)loadPointsOfInterest {
   NSLog(@"[MyMaps] loadPointsOfInterest");
-//	self.sm3dar.markerViewClass = nil;
-  [self.sm3dar replaceAllPointsOfInterestWith:self.points];
-  [self.sm3dar zoomMapToFit];  
-  [self.sm3dar startCamera];  
+
+  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedSM3DAR_Controller];
+  if (!sm3dar.originInitialized) {
+    NSLog(@"Warning: 3DAR is not initalized yet");
+    [self performSelector:@selector(loadPointsOfInterest) withObject:nil afterDelay:2.0f];
+    return;
+  }
+
+//	sm3dar.markerViewClass = nil;
+  [sm3dar replaceAllPointsOfInterestWith:self.points];
+  [sm3dar zoomMapToFit];
+  [sm3dar resume];
+//  [sm3dar startCamera];  
+  [SM3DAR_Controller printMemoryUsage:@"Loaded points of interest"];
 }
 
 -(void)didChangeFocusToPOI:(SM3DAR_PointOfInterest*)newPOI fromPOI:(SM3DAR_PointOfInterest*)oldPOI {

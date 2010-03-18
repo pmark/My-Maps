@@ -16,7 +16,7 @@
 
 	self.frame = CGRectMake(0, 0, img.size.width, img.size.height);
 	
-	[self scaleToRange];
+	//[self scaleToRange];
 	[self addSubview:icon];
 }
 

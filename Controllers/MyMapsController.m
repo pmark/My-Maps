@@ -67,7 +67,9 @@
 	for (GDataEntryMapFeature *f in features) {
 		GDataXMLElement *xml = [[f KMLValues] objectAtIndex:0];		
 		NSString *coords = [[[xml elementsForName:@"Point"] objectAtIndex:0] stringValue];
+    if (!coords) continue;
 		NSArray *chunks = [coords componentsSeparatedByString:@","];
+    if (!chunks || [chunks count] == 0) continue;
 		double lat, lng, alt;
 		NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
 		lng = [[formatter numberFromString:(NSString*)[chunks objectAtIndex:0]] doubleValue];
@@ -116,6 +118,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSLog(@"Selected map at row %i", indexPath.row);
   // get map ID
   GDataEntryMap *map = (GDataEntryMap*)[self.maps objectAtIndex:indexPath.row];
   NSString *mapId = [map identifier];

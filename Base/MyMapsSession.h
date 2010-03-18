@@ -10,11 +10,9 @@
 
 @interface MyMapsSession : NSObject {
 	BOOL networkIsReachable;
-  SM3DAR_Controller *sm3dar;
 }
 
 @property BOOL networkIsReachable;
-@property (nonatomic, retain) SM3DAR_Controller *sm3dar;
 
 + (MyMapsSession*)sharedMyMapsSession;
 + (NSString*)applicationDocumentsDirectory;

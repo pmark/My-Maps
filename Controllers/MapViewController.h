@@ -10,11 +10,9 @@
 #import "SM3DAR.h"
 
 @interface MapViewController : UIViewController <SM3DAR_Delegate> {
-  SM3DAR_Controller *sm3dar;
   NSArray *points;
 }
 
-@property (nonatomic, retain) SM3DAR_Controller *sm3dar;
 @property (nonatomic, retain) NSArray *points;
 
 @end

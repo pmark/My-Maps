@@ -70,15 +70,15 @@ static classname *shared##classname = nil; \
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(MyMapsSession);
 
-@synthesize networkIsReachable, sm3dar;
+@synthesize networkIsReachable;
 
 - (void)dealloc {
-  [sm3dar release];
   [super dealloc];
 }
 
 - (void)setup {
-  self.sm3dar = [[[SM3DAR_Controller alloc] init] autorelease];
+  // init 3DAR
+  [SM3DAR_Controller sharedSM3DAR_Controller];
   
 	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"DefaultPreferences" ofType:@"plist"]]];
 
