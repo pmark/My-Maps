@@ -24,7 +24,6 @@
 		4D8E1295115151FB008EA839 /* bubble1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8E1288115151FB008EA839 /* bubble1.png */; };
 		4D8E1296115151FB008EA839 /* compass_rose.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8E1289115151FB008EA839 /* compass_rose.png */; };
 		4D8E1297115151FB008EA839 /* SM3DAR_keys.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4D8E128B115151FB008EA839 /* SM3DAR_keys.txt */; };
-		4D8E12EA115155AF008EA839 /* SM3DARLibary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E12E9115155AF008EA839 /* SM3DARLibary.a */; };
 		4D8E15551152A75F008EA839 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E14CE1152A75F008EA839 /* APIClient.m */; };
 		4D8E15561152A75F008EA839 /* WebcamsTravelClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E14D01152A75F008EA839 /* WebcamsTravelClient.m */; };
 		4D8E15571152A75F008EA839 /* YahooLocalSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E14D21152A75F008EA839 /* YahooLocalSearch.m */; };
@@ -76,6 +75,7 @@
 		4D8E15851152A75F008EA839 /* SphereView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E15521152A75F008EA839 /* SphereView.mm */; };
 		4D8E15861152A75F008EA839 /* TexturedGeometryView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E15541152A75F008EA839 /* TexturedGeometryView.mm */; };
 		4D8E158B1152A775008EA839 /* SearchResultMarkerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E158A1152A775008EA839 /* SearchResultMarkerView.m */; };
+		4D8E16001152B1A0008EA839 /* SM3DARLibary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E15FF1152B1A0008EA839 /* SM3DARLibary.a */; };
 		4D9560221104F5A30040A9F4 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9560211104F5A30040A9F4 /* OpenGLES.framework */; };
 		4DA66C1910D98BB80062B5A7 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA66C1710D98BB80062B5A7 /* LoginController.m */; };
 		4DA66C3110D98C0D0062B5A7 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA66C2E10D98C0D0062B5A7 /* LoginController.xib */; };
@@ -207,7 +207,6 @@
 		4D8E1289115151FB008EA839 /* compass_rose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass_rose.png; sourceTree = "<group>"; };
 		4D8E128A115151FB008EA839 /* SM3DAR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SM3DAR.h; sourceTree = "<group>"; };
 		4D8E128B115151FB008EA839 /* SM3DAR_keys.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SM3DAR_keys.txt; sourceTree = "<group>"; };
-		4D8E12E9115155AF008EA839 /* SM3DARLibary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = SM3DARLibary.a; path = "../../SM3DARLibrary/SM3DARLibary/build/Debug-iphoneos/SM3DARLibary.a"; sourceTree = SOURCE_ROOT; };
 		4D8E14CD1152A75F008EA839 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
 		4D8E14CE1152A75F008EA839 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
 		4D8E14CF1152A75F008EA839 /* WebcamsTravelClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebcamsTravelClient.h; sourceTree = "<group>"; };
@@ -328,6 +327,7 @@
 		4D8E15541152A75F008EA839 /* TexturedGeometryView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TexturedGeometryView.mm; sourceTree = "<group>"; };
 		4D8E15891152A775008EA839 /* SearchResultMarkerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultMarkerView.h; sourceTree = "<group>"; };
 		4D8E158A1152A775008EA839 /* SearchResultMarkerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultMarkerView.m; sourceTree = "<group>"; };
+		4D8E15FF1152B1A0008EA839 /* SM3DARLibary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = SM3DARLibary.a; sourceTree = "<group>"; };
 		4D9560211104F5A30040A9F4 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		4DA66C1610D98BB80062B5A7 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		4DA66C1710D98BB80062B5A7 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
@@ -549,8 +549,8 @@
 				4DA66DFC10D998BA0062B5A7 /* QuartzCore.framework in Frameworks */,
 				4DE3EBB310E2FCAB007C4D06 /* SystemConfiguration.framework in Frameworks */,
 				4D9560221104F5A30040A9F4 /* OpenGLES.framework in Frameworks */,
-				4D8E12EA115155AF008EA839 /* SM3DARLibary.a in Frameworks */,
 				4D8E156F1152A75F008EA839 /* libGHUnitIPhone2_1.a in Frameworks */,
+				4D8E16001152B1A0008EA839 /* SM3DARLibary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,7 +593,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				4D9560211104F5A30040A9F4 /* OpenGLES.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -621,6 +620,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D9560211104F5A30040A9F4 /* OpenGLES.framework */,
 				4DE3EBA810E2FC7F007C4D06 /* Security.framework */,
 				4DE3EBB210E2FCAB007C4D06 /* SystemConfiguration.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -636,6 +636,7 @@
 		4D8E127F115151FB008EA839 /* SM3DAR */ = {
 			isa = PBXGroup;
 			children = (
+				4D8E15FF1152B1A0008EA839 /* SM3DARLibary.a */,
 				4D8E1280115151FB008EA839 /* 3dar.plist */,
 				4D8E1281115151FB008EA839 /* 3dar_logo.png */,
 				4D8E1282115151FB008EA839 /* 3dar_marker_icon1.png */,
@@ -648,7 +649,6 @@
 				4D8E1289115151FB008EA839 /* compass_rose.png */,
 				4D8E128A115151FB008EA839 /* SM3DAR.h */,
 				4D8E128B115151FB008EA839 /* SM3DAR_keys.txt */,
-				4D8E12E9115155AF008EA839 /* SM3DARLibary.a */,
 			);
 			path = SM3DAR;
 			sourceTree = "<group>";

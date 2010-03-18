@@ -18,12 +18,13 @@
   
 	self.icon = [[UIImageView alloc] initWithImage:img];
 	self.frame = CGRectMake(0, 0, img.size.width, img.size.height);
+  self.backgroundColor = [UIColor blackColor];
   
-  CALayer *l = [self.icon layer];
+  CALayer *l = self.layer;
   [l setMasksToBounds:YES];
   [l setCornerRadius:10.0];
   [l setBorderWidth:2.0];
-  [l setBorderColor:[[UIColor blackColor] CGColor]];
+  [l setBorderColor:[[UIColor whiteColor] CGColor]];
   
 	[self addSubview:self.icon];
 }

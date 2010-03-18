@@ -14,6 +14,7 @@
 #import "MapViewController.h"
 #import "SM3DAR.h"
 #import "UIApplication_TLCommon.h"
+#import "SearchResultMarkerView.h"
 
 @implementation MyMapsController
 @synthesize maps, myGoogleMaps, table;
@@ -43,7 +44,7 @@
   for (id map in allMaps) {
     [tmpMaps addObject:map];
   }
-
+  
   self.maps = tmpMaps;
   [self.table reloadData];
 }
@@ -60,9 +61,9 @@
   NSLog(@"Map features have been fetched");
   [[UIApplication sharedApplication] didStopNetworkRequest];
 	NSMutableArray *tempLocationArray = [[NSMutableArray alloc] initWithCapacity:[features count]];
-	CLLocation *tempLocation;
-	CLLocationCoordinate2D location;
 	SM3DAR_PointOfInterest *tempCoordinate;		
+  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedSM3DAR_Controller];
+  sm3dar.markerViewClass = [SearchResultMarkerView class];
 	
 	for (GDataEntryMapFeature *f in features) {
 		GDataXMLElement *xml = [[f KMLValues] objectAtIndex:0];		
@@ -70,22 +71,28 @@
     if (!coords) continue;
 		NSArray *chunks = [coords componentsSeparatedByString:@","];
     if (!chunks || [chunks count] == 0) continue;
-		double lat, lng, alt;
-		NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-		lng = [[formatter numberFromString:(NSString*)[chunks objectAtIndex:0]] doubleValue];
-		lat = [[formatter numberFromString:(NSString*)[chunks objectAtIndex:1]] doubleValue];
-		alt = [[formatter numberFromString:(NSString*)[chunks objectAtIndex:2]] doubleValue];
-		[formatter release];
-		location.latitude = lat;
-		location.longitude = lng;
-		tempLocation = [[CLLocation alloc] initWithCoordinate:location altitude:alt horizontalAccuracy:1.0 verticalAccuracy:1.0 timestamp:[NSDate date]];
+    
+    NSString *longitude = (NSString*)[chunks objectAtIndex:0];
+    NSString *latitude = (NSString*)[chunks objectAtIndex:1];
+    NSString *altitude = (NSString*)[chunks objectAtIndex:2];
 
 		NSString *featureName = [[[xml elementsForName:@"name"] objectAtIndex:0] stringValue];
-		tempCoordinate = [[SM3DAR_PointOfInterest alloc] initWithLocation:tempLocation title:featureName subtitle:nil url:nil];
-		[tempLocation release];		
+    
+    NSDictionary *poiProperties = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   featureName, @"title",
+                                   @"", @"subtitle",
+                                   latitude, @"latitude",
+                                   longitude, @"longitude",
+                                   altitude, @"altitude",
+                                   nil];
+    
+    NSLog(@"POI: %@ (%@, %@, %@)", featureName, latitude, longitude, altitude);
+
+    // Use the SM3DAR_Controller to prepare the POI.
+    tempCoordinate = [sm3dar initPointOfInterest:poiProperties];
 
 		[tempLocationArray addObject:tempCoordinate];
-        [tempCoordinate release];
+    [tempCoordinate release];
 	}
 	
   [self loadMapViewWithPoints:tempLocationArray];
@@ -123,7 +130,7 @@
   // get map ID
   GDataEntryMap *map = (GDataEntryMap*)[self.maps objectAtIndex:indexPath.row];
   NSString *mapId = [map identifier];
-
+  
   // TODO: check if we've already fetched this map
   
   [[UIApplication sharedApplication] didStartNetworkRequest];

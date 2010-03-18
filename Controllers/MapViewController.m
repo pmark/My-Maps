@@ -74,11 +74,11 @@
   [sm3dar zoomMapToFit];
   [sm3dar resume];
 //  [sm3dar startCamera];  
-  [SM3DAR_Controller printMemoryUsage:@"Loaded points of interest"];
+  [SM3DAR_Controller printMemoryUsage:@"MB after loading points of interest"];
 }
 
 -(void)didChangeFocusToPOI:(SM3DAR_PointOfInterest*)newPOI fromPOI:(SM3DAR_PointOfInterest*)oldPOI {
-	//NSLog(@"POI acquired focus: %@", newPOI.title);
+	NSLog(@"POI acquired focus: %@", newPOI.title);
 }
 
 -(void)didChangeSelectionToPOI:(SM3DAR_PointOfInterest*)newPOI fromPOI:(SM3DAR_PointOfInterest*)oldPOI {
