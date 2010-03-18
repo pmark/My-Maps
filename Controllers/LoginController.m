@@ -61,7 +61,13 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   
-  LabeledTextFieldTableCell *cell = [self newLabeledTextFieldForTableView:tableView];
+  //  LabeledTextFieldTableCell *cell = [self newLabeledTextFieldForTableView:tableView];
+	static NSString *cellIdentifier = @"LabeledTextFieldTableCell";  
+	LabeledTextFieldTableCell *cell = (LabeledTextFieldTableCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	if (cell == nil) {
+		cell = [[[LabeledTextFieldTableCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
+  }  
+  
   UITextField *textField = cell.textField;
   textField.placeholder = @"Required";
   textField.clearButtonMode = UITextFieldViewModeWhileEditing;
@@ -139,14 +145,17 @@
   [super dealloc];
 }
 
+/*
 - (LabeledTextFieldTableCell *)newLabeledTextFieldForTableView:(UITableView *)tableView {   
 	static NSString *cellIdentifier = @"LabeledTextFieldTableCell";  
 	LabeledTextFieldTableCell *cell = (LabeledTextFieldTableCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if (cell == nil) {
 		cell = [[[LabeledTextFieldTableCell alloc] initWithReuseIdentifier:cellIdentifier] autorelease];
-	}
+  }
+  
   return cell;
 }
+*/
 
 - (void) setTextField:(UITextField*)textField value:(NSString*)newValue {
   NSString *settingKey;  

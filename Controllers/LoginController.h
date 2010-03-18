@@ -25,7 +25,7 @@
 @property (nonatomic, retain) NSString *currentPassword;
 @property (nonatomic, assign) id<LoginControllerDelegate> delegate;
 
-- (LabeledTextFieldTableCell *)newLabeledTextFieldForTableView:(UITableView *)tableView;
+//- (LabeledTextFieldTableCell *)newLabeledTextFieldForTableView:(UITableView *)tableView;
 - (IBAction) done:(id)sender;
 
 @end

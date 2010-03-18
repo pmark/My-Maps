@@ -82,9 +82,10 @@
 
 		NSString *featureName = [[[xml elementsForName:@"name"] objectAtIndex:0] stringValue];
 		tempCoordinate = [[SM3DAR_PointOfInterest alloc] initWithLocation:tempLocation title:featureName subtitle:nil url:nil];
+		[tempLocation release];		
 
 		[tempLocationArray addObject:tempCoordinate];
-		[tempLocation release];		
+        [tempCoordinate release];
 	}
 	
   [self loadMapViewWithPoints:tempLocationArray];

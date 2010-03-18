@@ -10,14 +10,14 @@
 
 
 + (NSURLProtectionSpace*) protectionSpaceForKey:(NSString*)key {
-	NSURLProtectionSpace *protectionSpace;
+	NSURLProtectionSpace *protectionSpace = nil;
   
 	if ([key isEqualToString:PREF_USERNAME] || [key isEqualToString:PREF_PASSWORD]) {
-		protectionSpace = [[NSURLProtectionSpace alloc] initWithHost:KEYCHAIN_HOST
+		protectionSpace = [[[NSURLProtectionSpace alloc] initWithHost:KEYCHAIN_HOST
                                                             port:0
                                                         protocol:@"https"
                                                            realm:nil
-                                            authenticationMethod:nil];
+                                            authenticationMethod:nil] autorelease];
 	}
 	return protectionSpace;
 }
@@ -26,7 +26,7 @@
 	NSURLProtectionSpace *protectionSpace = [KeychainWrapper protectionSpaceForKey:key];
 	
 	NSURLCredential *oldCredential = [[NSURLCredentialStorage sharedCredentialStorage] defaultCredentialForProtectionSpace:protectionSpace];
-	NSURLCredential *newCredential;
+	NSURLCredential *newCredential = nil;
 	
 	if ([key isEqualToString:PREF_PASSWORD]) {
 		if (oldCredential == nil) {

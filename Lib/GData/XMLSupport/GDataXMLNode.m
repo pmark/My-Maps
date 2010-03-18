@@ -800,7 +800,7 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
       xmlXPathFreeContext(xpathCtx);
     }
 
-    if (array == nil) {
+    if (array == nil && xpathCtx != nil) {
 
       // provide an error
       //
@@ -811,9 +811,11 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
         userInfo = [NSDictionary dictionaryWithObject:[NSString stringWithUTF8String:msg]
                                                forKey:@"error"];
       }
-      *error = [NSError errorWithDomain:@"com.google.GDataXML"
-                                   code:xpathCtx->lastError.code
-                               userInfo:userInfo];
+      if (error) {
+        *error = [NSError errorWithDomain:@"com.google.GDataXML"
+                                     code:xpathCtx->lastError.code
+                                 userInfo:userInfo];
+      }
     }
   }
 
