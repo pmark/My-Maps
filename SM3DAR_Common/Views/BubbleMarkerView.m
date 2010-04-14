@@ -53,8 +53,8 @@
   return scalar;
 }
 
-// rangeScaleTransformation is called automatically
-- (CGAffineTransform) rangeScaleTransformation {
+// pointTransform is called automatically
+- (CGAffineTransform) pointTransform {
   CGFloat scalar = [self rangeScalar];
 
   CGFloat range1 = SCALE_REDUCTION * 0.66;

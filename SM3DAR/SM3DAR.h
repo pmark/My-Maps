@@ -205,7 +205,7 @@ typedef NSObject<SM3DAR_PointProtocol> SM3DAR_Point;
 @property (nonatomic, retain) SM3DAR_Point *point;
 
 - (void) buildView;
-- (CGAffineTransform) rangeScaleTransformation;
+- (CGAffineTransform) pointTransform;
 - (void) didReceiveFocus;
 - (void) didLoseFocus;
 - (void) resizeFrameAround:(UIView*)targetView;

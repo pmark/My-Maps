@@ -21,7 +21,7 @@
   sm3dar.view.backgroundColor = [UIColor blackColor];
   [self.view addSubview:sm3dar.view];
 
-  ((SM3DAR_FocusView*)sm3dar.focusView).centerOffset = CGPointMake(0, 20);
+  ((SM3DAR_FocusView*)sm3dar.focusView).centerOffset = CGPointMake(0, 43);
 
   // Normally 3DAR calls loadPointsOfInterest for us
   // but in this case the session has already initialized 3DAR.
