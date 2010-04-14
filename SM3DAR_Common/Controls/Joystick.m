@@ -143,7 +143,7 @@ deadRadius;
   
   self.backgroundColor = [UIColor clearColor];
   if (!background) {
-    self.background = [[UIImageView alloc] initWithImage:@"128_white.png"];
+      self.background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"128_white.png"]];
     [self addSubview:background];    
   }
 

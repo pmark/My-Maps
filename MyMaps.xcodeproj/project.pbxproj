@@ -28,7 +28,6 @@
 		4D8E15551152A75F008EA839 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E14CE1152A75F008EA839 /* APIClient.m */; };
 		4D8E15561152A75F008EA839 /* WebcamsTravelClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E14D01152A75F008EA839 /* WebcamsTravelClient.m */; };
 		4D8E15571152A75F008EA839 /* YahooLocalSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E14D21152A75F008EA839 /* YahooLocalSearch.m */; };
-		4D8E15581152A75F008EA839 /* UIApplication_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E14D51152A75F008EA839 /* UIApplication_TLCommon.m */; };
 		4D8E15591152A75F008EA839 /* UIColor_Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E14D71152A75F008EA839 /* UIColor_Expanded.m */; };
 		4D8E155A1152A75F008EA839 /* Dpad.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E14DA1152A75F008EA839 /* Dpad.m */; };
 		4D8E155B1152A75F008EA839 /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E14DC1152A75F008EA839 /* Joystick.m */; };
@@ -214,8 +213,6 @@
 		4D8E14D01152A75F008EA839 /* WebcamsTravelClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebcamsTravelClient.m; sourceTree = "<group>"; };
 		4D8E14D11152A75F008EA839 /* YahooLocalSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YahooLocalSearch.h; sourceTree = "<group>"; };
 		4D8E14D21152A75F008EA839 /* YahooLocalSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YahooLocalSearch.m; sourceTree = "<group>"; };
-		4D8E14D41152A75F008EA839 /* UIApplication_TLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIApplication_TLCommon.h; sourceTree = "<group>"; };
-		4D8E14D51152A75F008EA839 /* UIApplication_TLCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIApplication_TLCommon.m; sourceTree = "<group>"; };
 		4D8E14D61152A75F008EA839 /* UIColor_Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColor_Expanded.h; sourceTree = "<group>"; };
 		4D8E14D71152A75F008EA839 /* UIColor_Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColor_Expanded.m; sourceTree = "<group>"; };
 		4D8E14D91152A75F008EA839 /* Dpad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dpad.h; sourceTree = "<group>"; };
@@ -684,8 +681,6 @@
 		4D8E14D31152A75F008EA839 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				4D8E14D41152A75F008EA839 /* UIApplication_TLCommon.h */,
-				4D8E14D51152A75F008EA839 /* UIApplication_TLCommon.m */,
 				4D8E14D61152A75F008EA839 /* UIColor_Expanded.h */,
 				4D8E14D71152A75F008EA839 /* UIColor_Expanded.m */,
 			);
@@ -1422,7 +1417,6 @@
 				4D8E15551152A75F008EA839 /* APIClient.m in Sources */,
 				4D8E15561152A75F008EA839 /* WebcamsTravelClient.m in Sources */,
 				4D8E15571152A75F008EA839 /* YahooLocalSearch.m in Sources */,
-				4D8E15581152A75F008EA839 /* UIApplication_TLCommon.m in Sources */,
 				4D8E15591152A75F008EA839 /* UIColor_Expanded.m in Sources */,
 				4D8E155A1152A75F008EA839 /* Dpad.m in Sources */,
 				4D8E155B1152A75F008EA839 /* Joystick.m in Sources */,
