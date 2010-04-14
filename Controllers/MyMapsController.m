@@ -62,8 +62,8 @@
   [[UIApplication sharedApplication] didStopNetworkRequest];
 	NSMutableArray *tempLocationArray = [NSMutableArray arrayWithCapacity:[features count]];
 	SM3DAR_PointOfInterest *tempCoordinate;		
-  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedSM3DAR_Controller];
-  sm3dar.markerViewClass = [SearchResultMarkerView class];
+  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedController];
+  Class markerViewClass = [SearchResultMarkerView class];
 	
 	for (GDataEntryMapFeature *f in features) {
 		GDataXMLElement *xml = [[f KMLValues] objectAtIndex:0];		
@@ -72,26 +72,22 @@
 		NSArray *chunks = [coords componentsSeparatedByString:@","];
     if (!chunks || [chunks count] == 0) continue;
     
-    NSString *longitude = (NSString*)[chunks objectAtIndex:0];
-    NSString *latitude = (NSString*)[chunks objectAtIndex:1];
-    NSString *altitude = (NSString*)[chunks objectAtIndex:2];
+    CLLocationDegrees longitude = [(NSString*)[chunks objectAtIndex:0] doubleValue];
+    CLLocationDegrees latitude = [(NSString*)[chunks objectAtIndex:1] doubleValue];
+    CGFloat altitude = [(NSString*)[chunks objectAtIndex:2] floatValue];
 
 		NSString *featureName = [[[xml elementsForName:@"name"] objectAtIndex:0] stringValue];
     if (featureName == nil) featureName = @"";
     featureName = [featureName stringByReplacingOccurrencesOfString:@"&#39;" withString:@"'"];
     
-    NSDictionary *poiProperties = [NSDictionary dictionaryWithObjectsAndKeys:
-                                   featureName, @"title",
-                                   @"", @"subtitle",
-                                   latitude, @"latitude",
-                                   longitude, @"longitude",
-                                   altitude, @"altitude",
-                                   nil];
-    
-    NSLog(@"POI: %@ (%@, %@, %@)", featureName, latitude, longitude, altitude);
-
     // Use the SM3DAR_Controller to prepare the POI.
-    tempCoordinate = [sm3dar initPointOfInterest:poiProperties];
+    tempCoordinate = [sm3dar initPointOfInterest:latitude 
+                                       longitude:longitude 
+                                        altitude:altitude 
+                                           title:featureName 
+                                        subtitle:@"" 
+                                 markerViewClass:markerViewClass 
+                                      properties:nil];
 
 		[tempLocationArray addObject:tempCoordinate];
     [tempCoordinate release];

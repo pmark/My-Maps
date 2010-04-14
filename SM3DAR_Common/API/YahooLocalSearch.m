@@ -15,7 +15,7 @@
 @synthesize webData, query;
 
 - (void)execute:(NSString*)searchQuery {
-  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedSM3DAR_Controller];
+  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedController];
 
   self.query = searchQuery;
 	CLLocation *loc = [sm3dar currentLocation];
@@ -95,7 +95,7 @@
 	// convert response json into a collection of markers
 	NSArray *markers = [self parseYahooMapSearchResults:response];
 
-  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedSM3DAR_Controller];
+  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedController];
 	
 	NSLog(@"Adding %i POIs", [markers count]);
   NSMutableArray *points = [NSMutableArray arrayWithCapacity:[markers count]];

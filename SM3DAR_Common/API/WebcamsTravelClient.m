@@ -61,7 +61,7 @@
   for (NSDictionary *properties in results) {
     //NSLog(@"[API] init webcam with properties: %@", properties);
     webcam = [[Webcam alloc] initWithDictionary:properties];
-    poi = [[SM3DAR_Controller sharedSM3DAR_Controller] initPointOfInterest:[webcam pointOfInterestData]];
+    poi = [[SM3DAR_Controller sharedController] initPointOfInterest:[webcam pointOfInterestData]];
     [itemArray addObject:poi];
     //[poi release];
   }

@@ -16,10 +16,12 @@
   [super viewDidLoad];
 
   // set up 3DAR
-  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedSM3DAR_Controller];
+  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedController];
   sm3dar.delegate = self;
   sm3dar.view.backgroundColor = [UIColor blackColor];
   [self.view addSubview:sm3dar.view];
+  
+  [sm3dar resume];
 
   ((SM3DAR_FocusView*)sm3dar.focusView).centerOffset = CGPointMake(0, 43);
 
@@ -31,9 +33,8 @@
 - (void)viewDidDisappear:(BOOL)animated {
   NSLog(@"[MVC] viewDidDisappear");
   [super viewDidDisappear:animated];
-  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedSM3DAR_Controller];
+  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedController];
   [sm3dar suspend];
-//  [sm3dar stopCamera];  
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -64,16 +65,17 @@
 -(void)loadPointsOfInterest {
   NSLog(@"[MyMaps] loadPointsOfInterest");
 
-  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedSM3DAR_Controller];
+  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedController];
+  /*
   if (!sm3dar.originInitialized) {
     NSLog(@"Warning: 3DAR is not initalized yet");
     [self performSelector:@selector(loadPointsOfInterest) withObject:nil afterDelay:2.0f];
     return;
   }
+  */
 
   [sm3dar replaceAllPointsOfInterestWith:self.points];
   [sm3dar zoomMapToFit];
-  [sm3dar resume];
 }
 
 -(void)didChangeFocusToPOI:(SM3DAR_PointOfInterest*)newPOI fromPOI:(SM3DAR_PointOfInterest*)oldPOI {

@@ -31,7 +31,7 @@
   CGFloat scalar;
 	CGFloat poiDistance = [self.poi distanceInMetersFromCurrentLocation];
 
-  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedSM3DAR_Controller];
+  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedController];
 	CGFloat minRange = sm3dar.nearClipMeters;
 	CGFloat maxRange = sm3dar.farClipMeters;
   

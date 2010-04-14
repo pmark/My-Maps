@@ -78,7 +78,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(MyMapsSession);
 
 - (void)setup {
   // init 3DAR
-  [SM3DAR_Controller sharedSM3DAR_Controller];
+  [SM3DAR_Controller reinit];
   
 	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"DefaultPreferences" ofType:@"plist"]]];
 
@@ -86,7 +86,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(MyMapsSession);
   [[Reachability sharedReachability] setNetworkStatusNotificationsEnabled:YES];
 	self.networkIsReachable = YES;
   [self updateReachabilityStatus];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector( reachabilityChanged: ) name:@"kNetworkReachabilityChangedNotification" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:@"kNetworkReachabilityChangedNotification" object:nil];
   
 }
 

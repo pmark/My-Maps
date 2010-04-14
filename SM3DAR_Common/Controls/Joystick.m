@@ -58,7 +58,7 @@ deadRadius;
 
 - (void) updateThumbPosition {
 //  NSString *msg = [NSString stringWithFormat:@"joystick: %i, %i", (int)stickPosition.x, (int)stickPosition.y];
-//  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedSM3DAR_Controller];
+//  SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedController];
   //[sm3dar debug:msg];
 
   thumb.center = self.stickPosition;
@@ -109,7 +109,7 @@ deadRadius;
 //      velocity.x, velocity.y,
 //      (int)dx, (int)dy,
 //      (int)degrees];
-//  [[SM3DAR_Controller sharedSM3DAR_Controller] debug:msg];
+//  [[SM3DAR_Controller sharedController] debug:msg];
 }
 
 - (void) setJoystickRadius:(float)r
@@ -190,7 +190,7 @@ deadRadius;
 //      (int)location.x, (int)location.y,
 //      (int)centerPoint.x, (int)centerPoint.y,
 //      (int)difference.x, (int)difference.y];
-//  [[SM3DAR_Controller sharedSM3DAR_Controller] debug:msg];
+//  [[SM3DAR_Controller sharedController] debug:msg];
 
   return difference;
 }
