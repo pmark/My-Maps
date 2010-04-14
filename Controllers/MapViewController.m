@@ -20,7 +20,9 @@
   sm3dar.delegate = self;
   sm3dar.view.backgroundColor = [UIColor blackColor];
   [self.view addSubview:sm3dar.view];
-  
+
+  ((SM3DAR_FocusView*)sm3dar.focusView).centerOffset = CGPointMake(0, 20);
+
   // Normally 3DAR calls loadPointsOfInterest for us
   // but in this case the session has already initialized 3DAR.
   [self loadPointsOfInterest];  
@@ -69,12 +71,9 @@
     return;
   }
 
-//	sm3dar.markerViewClass = nil;
   [sm3dar replaceAllPointsOfInterestWith:self.points];
   [sm3dar zoomMapToFit];
   [sm3dar resume];
-//  [sm3dar startCamera];  
-  [SM3DAR_Controller printMemoryUsage:@"MB after loading points of interest"];
 }
 
 -(void)didChangeFocusToPOI:(SM3DAR_PointOfInterest*)newPOI fromPOI:(SM3DAR_PointOfInterest*)oldPOI {

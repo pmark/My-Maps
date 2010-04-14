@@ -60,7 +60,7 @@
 - (void) didFetchFeatures:(NSArray*)features {
   NSLog(@"Map features have been fetched");
   [[UIApplication sharedApplication] didStopNetworkRequest];
-	NSMutableArray *tempLocationArray = [[NSMutableArray alloc] initWithCapacity:[features count]];
+	NSMutableArray *tempLocationArray = [NSMutableArray arrayWithCapacity:[features count]];
 	SM3DAR_PointOfInterest *tempCoordinate;		
   SM3DAR_Controller *sm3dar = [SM3DAR_Controller sharedSM3DAR_Controller];
   sm3dar.markerViewClass = [SearchResultMarkerView class];
@@ -77,6 +77,8 @@
     NSString *altitude = (NSString*)[chunks objectAtIndex:2];
 
 		NSString *featureName = [[[xml elementsForName:@"name"] objectAtIndex:0] stringValue];
+    if (featureName == nil) featureName = @"";
+    featureName = [featureName stringByReplacingOccurrencesOfString:@"&#39;" withString:@"'"];
     
     NSDictionary *poiProperties = [NSDictionary dictionaryWithObjectsAndKeys:
                                    featureName, @"title",
@@ -96,7 +98,6 @@
 	}
 	
   [self loadMapViewWithPoints:tempLocationArray];
-	[tempLocationArray release];
 }
 
 

@@ -13,6 +13,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28C286E10D94DF7D0034E888 /* MyMapsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* MyMapsController.m */; };
+		4D443A0E117548C4007C4C9F /* SM3DARLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D443A0D117548C4007C4C9F /* SM3DARLibrary.a */; };
 		4D8E128D115151FB008EA839 /* 3dar.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D8E1280115151FB008EA839 /* 3dar.plist */; };
 		4D8E128E115151FB008EA839 /* 3dar_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8E1281115151FB008EA839 /* 3dar_logo.png */; };
 		4D8E128F115151FB008EA839 /* 3dar_marker_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8E1282115151FB008EA839 /* 3dar_marker_icon1.png */; };
@@ -75,7 +76,6 @@
 		4D8E15851152A75F008EA839 /* SphereView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E15521152A75F008EA839 /* SphereView.mm */; };
 		4D8E15861152A75F008EA839 /* TexturedGeometryView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E15541152A75F008EA839 /* TexturedGeometryView.mm */; };
 		4D8E158B1152A775008EA839 /* SearchResultMarkerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8E158A1152A775008EA839 /* SearchResultMarkerView.m */; };
-		4D8E16001152B1A0008EA839 /* SM3DARLibary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8E15FF1152B1A0008EA839 /* SM3DARLibary.a */; };
 		4D9560221104F5A30040A9F4 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9560211104F5A30040A9F4 /* OpenGLES.framework */; };
 		4DA66C1910D98BB80062B5A7 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA66C1710D98BB80062B5A7 /* LoginController.m */; };
 		4DA66C3110D98C0D0062B5A7 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA66C2E10D98C0D0062B5A7 /* LoginController.xib */; };
@@ -195,6 +195,7 @@
 		28C286DF0D94DF7D0034E888 /* MyMapsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMapsController.h; sourceTree = "<group>"; };
 		28C286E00D94DF7D0034E888 /* MyMapsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMapsController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4D443A0D117548C4007C4C9F /* SM3DARLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = SM3DARLibrary.a; sourceTree = "<group>"; };
 		4D8E1280115151FB008EA839 /* 3dar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 3dar.plist; sourceTree = "<group>"; };
 		4D8E1281115151FB008EA839 /* 3dar_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3dar_logo.png; sourceTree = "<group>"; };
 		4D8E1282115151FB008EA839 /* 3dar_marker_icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3dar_marker_icon1.png; sourceTree = "<group>"; };
@@ -327,7 +328,6 @@
 		4D8E15541152A75F008EA839 /* TexturedGeometryView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TexturedGeometryView.mm; sourceTree = "<group>"; };
 		4D8E15891152A775008EA839 /* SearchResultMarkerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultMarkerView.h; sourceTree = "<group>"; };
 		4D8E158A1152A775008EA839 /* SearchResultMarkerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultMarkerView.m; sourceTree = "<group>"; };
-		4D8E15FF1152B1A0008EA839 /* SM3DARLibary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = SM3DARLibary.a; sourceTree = "<group>"; };
 		4D9560211104F5A30040A9F4 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		4DA66C1610D98BB80062B5A7 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		4DA66C1710D98BB80062B5A7 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
@@ -550,7 +550,7 @@
 				4DE3EBB310E2FCAB007C4D06 /* SystemConfiguration.framework in Frameworks */,
 				4D9560221104F5A30040A9F4 /* OpenGLES.framework in Frameworks */,
 				4D8E156F1152A75F008EA839 /* libGHUnitIPhone2_1.a in Frameworks */,
-				4D8E16001152B1A0008EA839 /* SM3DARLibary.a in Frameworks */,
+				4D443A0E117548C4007C4C9F /* SM3DARLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,7 +636,7 @@
 		4D8E127F115151FB008EA839 /* SM3DAR */ = {
 			isa = PBXGroup;
 			children = (
-				4D8E15FF1152B1A0008EA839 /* SM3DARLibary.a */,
+				4D443A0D117548C4007C4C9F /* SM3DARLibrary.a */,
 				4D8E1280115151FB008EA839 /* 3dar.plist */,
 				4D8E1281115151FB008EA839 /* 3dar_logo.png */,
 				4D8E1282115151FB008EA839 /* 3dar_marker_icon1.png */,
@@ -1546,12 +1546,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peter Anderson";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9F743177-130E-4516-938D-2F17EE4A5F9C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos3.1;
 			};
 			name = Debug;
