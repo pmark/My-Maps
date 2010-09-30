@@ -1,0 +1,375 @@
+// !$*UTF8*$!
+{
+	1D3623250D0F684500981E51 /* MyMapsAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1270, 1125}}";
+			sepNavSelRange = "{554, 5}";
+			sepNavVisRange = "{0, 654}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* MyMaps */ = {
+		activeExec = 0;
+		executables = (
+			4D4439F31175483F007C4C9F /* MyMaps */,
+		);
+	};
+	28C286E00D94DF7D0034E888 /* MyMapsController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1383.82, 4825}}";
+			sepNavSelRange = "{3404, 0}";
+			sepNavVisRange = "{2968, 898}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 4D4439F31175483F007C4C9F /* MyMaps */;
+		activeSDKPreference = iphoneos4.1;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* MyMaps */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* MyMaps */,
+		);
+		breakpoints = (
+		);
+		codeSenseManager = 4D443A0B1175485E007C4C9F /* Code sense */;
+		executables = (
+			4D4439F31175483F007C4C9F /* MyMaps */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					1109,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					1069,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 307582416;
+			PBXWorkspaceStateSaveDate = 307582416;
+		};
+		perUserProjectItems = {
+			4D0ED35511767B33003F2C04 /* PBXTextBookmark */ = 4D0ED35511767B33003F2C04 /* PBXTextBookmark */;
+			4D49E35311FA717E00D250FB /* PBXTextBookmark */ = 4D49E35311FA717E00D250FB /* PBXTextBookmark */;
+			4DA44D5E118235B60046CEBB /* PBXTextBookmark */ = 4DA44D5E118235B60046CEBB /* PBXTextBookmark */;
+			4DA44D5F118235B60046CEBB /* PBXTextBookmark */ = 4DA44D5F118235B60046CEBB /* PBXTextBookmark */;
+			4DA44D60118235B60046CEBB /* PBXTextBookmark */ = 4DA44D60118235B60046CEBB /* PBXTextBookmark */;
+			4DA44D61118235B60046CEBB /* PBXTextBookmark */ = 4DA44D61118235B60046CEBB /* PBXTextBookmark */;
+			4DE073AA125556830058B3AC /* PBXTextBookmark */ = 4DE073AA125556830058B3AC /* PBXTextBookmark */;
+			4DE073C3125557720058B3AC /* PBXTextBookmark */ = 4DE073C3125557720058B3AC /* PBXTextBookmark */;
+			4DE073CD125557E50058B3AC /* PlistBookmark */ = 4DE073CD125557E50058B3AC /* PlistBookmark */;
+			4DE073D0125558360058B3AC /* PBXTextBookmark */ = 4DE073D0125558360058B3AC /* PBXTextBookmark */;
+			4DE073D1125558360058B3AC /* PlistBookmark */ = 4DE073D1125558360058B3AC /* PlistBookmark */;
+		};
+		sourceControlManager = 4D443A0A1175485E007C4C9F /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	4D0ED35511767B33003F2C04 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DB263AF10DACB4F00AC4DA0 /* UIApplication_TLCommon.m */;
+		name = "UIApplication_TLCommon.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 488;
+		vrLoc = 0;
+	};
+	4D4439F31175483F007C4C9F /* MyMaps */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = MyMaps;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	4D443A0A1175485E007C4C9F /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	4D443A0B1175485E007C4C9F /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	4D49E35311FA717E00D250FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DA66CE910D997E10062B5A7 /* GDataServiceGoogleMaps.m */;
+		name = "GDataServiceGoogleMaps.m: 25";
+		rLen = 0;
+		rLoc = 784;
+		rType = 0;
+		vrLen = 393;
+		vrLoc = 699;
+	};
+	4D8E128A115151FB008EA839 /* SM3DAR.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {3144.51, 8300}}";
+			sepNavSelRange = "{3390, 0}";
+			sepNavVisRange = "{2973, 1091}";
+			sepNavWindowFrame = "{{15, 123}, {1365, 874}}";
+		};
+	};
+	4D8E128B115151FB008EA839 /* SM3DAR_keys.txt */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {967, 641}}";
+			sepNavSelRange = "{208, 0}";
+			sepNavVisRange = "{0, 208}";
+		};
+	};
+	4D8E14DC1152A75F008EA839 /* Joystick.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1070.57, 5925}}";
+			sepNavSelRange = "{3040, 0}";
+			sepNavVisRange = "{2712, 847}";
+		};
+	};
+	4D8E154C1152A75F008EA839 /* BubbleMarkerView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1270, 1875}}";
+			sepNavSelRange = "{1244, 0}";
+			sepNavVisRange = "{946, 577}";
+		};
+	};
+	4D8E15891152A775008EA839 /* SearchResultMarkerView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1270, 547}}";
+			sepNavSelRange = "{201, 21}";
+			sepNavVisRange = "{0, 233}";
+		};
+	};
+	4D8E158A1152A775008EA839 /* SearchResultMarkerView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1270, 2300}}";
+			sepNavSelRange = "{481, 0}";
+			sepNavVisRange = "{279, 655}";
+		};
+	};
+	4DA44D5E118235B60046CEBB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D8E14DC1152A75F008EA839 /* Joystick.m */;
+		name = "Joystick.m: 143";
+		rLen = 0;
+		rLoc = 3040;
+		rType = 0;
+		vrLen = 847;
+		vrLoc = 2712;
+	};
+	4DA44D5F118235B60046CEBB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* MyMapsController.m */;
+		name = "MyMapsController.m: 90";
+		rLen = 0;
+		rLoc = 3404;
+		rType = 0;
+		vrLen = 898;
+		vrLoc = 2968;
+	};
+	4DA44D60118235B60046CEBB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DA66C4310D98CE70062B5A7 /* MyMaps.h */;
+		name = "MyMaps.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1242;
+		vrLoc = 3;
+	};
+	4DA44D61118235B60046CEBB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DE3EB7510E2F955007C4D06 /* MyMapsSession.h */;
+		name = "MyMapsSession.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 416;
+		vrLoc = 0;
+	};
+	4DA66C4310D98CE70062B5A7 /* MyMaps.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1146.18, 675}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{3, 1242}";
+		};
+	};
+	4DA66CE910D997E10062B5A7 /* GDataServiceGoogleMaps.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1219, 2450}}";
+			sepNavSelRange = "{784, 0}";
+			sepNavVisRange = "{700, 149}";
+		};
+	};
+	4DA66D6010D997E10062B5A7 /* GDataGatherInputStream.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1539, 1575}}";
+			sepNavSelRange = "{1572, 0}";
+			sepNavVisRange = "{1403, 288}";
+		};
+	};
+	4DA66D6110D997E10062B5A7 /* GDataGatherInputStream.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1592, 5025}}";
+			sepNavSelRange = "{3516, 0}";
+			sepNavVisRange = "{3182, 836}";
+			sepNavWindowFrame = "{{15, 74}, {1651, 979}}";
+		};
+	};
+	4DA66DED10D9986C0062B5A7 /* MyGoogleMaps.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1287, 3750}}";
+			sepNavSelRange = "{946, 0}";
+			sepNavVisRange = "{791, 824}";
+		};
+	};
+	4DA66FE110D9CD5B0062B5A7 /* MapViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1270, 817}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 329}";
+		};
+	};
+	4DA66FE210D9CD5B0062B5A7 /* MapViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1539, 2250}}";
+			sepNavSelRange = "{654, 0}";
+			sepNavVisRange = "{506, 248}";
+		};
+	};
+	4DB263AF10DACB4F00AC4DA0 /* UIApplication_TLCommon.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1270, 675}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 488}";
+		};
+	};
+	4DE073AA125556830058B3AC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DA66DED10D9986C0062B5A7 /* MyGoogleMaps.m */;
+		name = "MyGoogleMaps.m: 43";
+		rLen = 0;
+		rLoc = 946;
+		rType = 0;
+		vrLen = 824;
+		vrLoc = 791;
+	};
+	4DE073C3125557720058B3AC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DA66D6010D997E10062B5A7 /* GDataGatherInputStream.h */;
+		name = "GDataGatherInputStream.h: 36";
+		rLen = 0;
+		rLoc = 1572;
+		rType = 0;
+		vrLen = 1059;
+		vrLoc = 1192;
+	};
+	4DE073CD125557E50058B3AC /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 4D8E1280115151FB008EA839 /* 3dar.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			3darEnableMap,
+		);
+		name = "/Users/mark/projects/Spot Metrix/PROJECTS/SM3DAR/EXAMPLES/MyMaps/App/SM3DAR/3dar.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	4DE073D0125558360058B3AC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D8E128A115151FB008EA839 /* SM3DAR.h */;
+		name = "SM3DAR.h: 111";
+		rLen = 0;
+		rLoc = 3390;
+		rType = 0;
+		vrLen = 1091;
+		vrLoc = 2973;
+	};
+	4DE073D1125558360058B3AC /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 4D8E1280115151FB008EA839 /* 3dar.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/mark/projects/Spot Metrix/PROJECTS/SM3DAR/EXAMPLES/MyMaps/App/SM3DAR/3dar.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	4DE3EB7510E2F955007C4D06 /* MyMapsSession.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {967, 641}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 416}";
+		};
+	};
+	4DE3EB7610E2F955007C4D06 /* MyMapsSession.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1967.12, 2900}}";
+			sepNavSelRange = "{1641, 0}";
+			sepNavVisRange = "{881, 613}";
+		};
+	};
+}
